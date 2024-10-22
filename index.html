@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life of Pets</title>
+    <style>
+      body {
+        background: linear-gradient(
+          90deg,
+          rgba(15, 180, 232, 1) 0%,
+          rgba(159, 103, 191, 1) 35%,
+          rgba(195, 244, 254, 1) 100%
+        );
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      p {
+        font-size: 28px;
+        line-height: 50px;
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+      img {
+        max-width: 100%;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        background-color: white;
+        padding: 15px 30px;
+        border-radius: 40px;
+
+        border: 1px solid burlywood;
+        font-size: 30px;
+      }
+
+      .mother {
+        max-width: 700px;
+        margin: 18px auto;
+        background-color: white;
+        padding: 18px;
+        border-radius: 15px;
+      }
+      footer {
+        text-align: center;
+        font-size: 24px;
+      }
+      .label {
+        background-color: #2c261d;
+        color: white;
+        font-size: 25px;
+        padding: 15px;
+      }
+      .secondbutton {
+        background-color: cornflowerblue;
+        color: white;
+        width: 100%;
+        margin: 30px 0px;
+      }
+
+      .label:hover,
+      .secondbutton:hover {
+        background-color: white;
+        color: cornflowerblue;
+        border: 2px solid cornflowerblue;
+        cursor: pointer;
+      }
+      .firstpicture {
+        border-radius: 10px;
+        transition: all 100ms ease-in-out;
+      }
+      .firstpicture:hover {
+        transform: scale(1.1);
+      }
+      .images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+
+        margin: 20px 0;
+      }
+      .images img {
+        border-radius: 15px;
+      }
+
+      div a {
+        text-decoration: none;
+        font-size: 28px;
+        font-weight: bold;
+        color: cornflowerblue;
+      }
+
+      footer a {
+        color: black;
+      }
+      .black {
+        background: linear-gradient(
+          90deg,
+          rgba(15, 180, 232, 1) 0%,
+          rgba(255, 255, 255, 1) 35%,
+          rgba(195, 244, 254, 1) 100%
+        );
+      }
+      .black .mother {
+        background-color: white;
+      }
+      strong{
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mother">
+      <button class="label">Change theme</button>
+      <h1>Pets</h1>
+      <h2>Learn more about Pets</h2>
+      <div>
+        <a href="https://en.wikipedia.org/wiki/Pet">
+          <img
+            class="firstpicture"
+            src="https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+        </a>
+        <div class="images">
+          <img
+            src="https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/7516109/pexels-photo-7516109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/16395147/pexels-photo-16395147/free-photo-of-cat-and-dog-with-toy.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+        </div>
+      </div>
+      <p>
+        A pet, or companion animal, is an animal kept primarily for a person's
+        company or entertainment rather than as a working animal, livestock, or
+        a laboratory animal. Popular pets are often considered to have
+        attractive/cute appearances, intelligence, and relatable personalities,
+        but some pets may be taken in on an altruistic basis (such as a stray
+        animal) and accepted by the owner regardless of these characteristics.
+      </p>
+      <div>
+        <strong>
+          📘
+        </strong>
+        <a href="https://en.wikipedia.org/wiki/Pet">Read more on wikipeadia</a>
+      </div>
+      <button class="secondbutton">Tell Us About Your Pets</button>
+      <footer>
+        Coded by
+        <a href=" href=" www.linkedin.com>Hamda </a> with HTML,CSS and
+        JAVASCRIPT
+      </footer>
+    </div>
+
+    <script>
+      let btn2 = document.querySelector(".secondbutton");
+      let btn = document.querySelector("button");
+
+
+
+
+      function askQuestions(){
+        let question1 = prompt("Do you have a pet? ");
+        let question2 = prompt("What is your name? ");
+        let question3 = prompt("What is your email?");
+        alert(`Thanks ${question2} i would love to meet your pet oneday`);
+      }
+
+
+
+      function labelButton() {
+        let body = document.querySelector("body");
+
+        if (body.classList.contains("black")) {
+          body.classList.remove("black");
+          btn.classList.add("label");
+        } else {
+          body.classList.add("black");
+          btn.classList.add("label");
+        }
+      }
+
+      btn.addEventListener("click", labelButton);
+      btn2.addEventListener("click",askQuestions)
+    </script>
+  </body>
+</html>
